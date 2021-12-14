@@ -5,3 +5,9 @@ export const CenterDiv = styled.div`
   margin: auto;
   padding: 25px;
 `
+export const FlexDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+`

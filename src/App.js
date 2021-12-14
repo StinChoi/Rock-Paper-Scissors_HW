@@ -1,12 +1,12 @@
 import './App.css';
 import { CenterDiv } from './components/Styles';
-// import SinglePlayer from './pages/PlayerOne';
+import PlayerOne from './pages/PlayerOne';
 
 function App() {
   return (
     <CenterDiv>
       <h1>Rock, Paper, Scissors</h1>
-      {/* <PlayerOne /> */}
+      <PlayerOne />
     </CenterDiv>
   );
 }
