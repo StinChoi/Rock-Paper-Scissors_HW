@@ -1,24 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import { CenterDiv } from './components/Styles';
+// import SinglePlayer from './pages/PlayerOne';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CenterDiv>
+      <h1>Rock, Paper, Scissors</h1>
+      {/* <PlayerOne /> */}
+    </CenterDiv>
   );
 }
 
