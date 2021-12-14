@@ -1,6 +1,9 @@
 import React, { useState } from "react";
-import { Button, Form, Segment } from "semantic-ui-react";
+import { Button, Form, Segment, Image } from "semantic-ui-react";
 import { CenterDiv, FlexDiv } from '../components/Styles';
+import rock from "../images/rock.png";
+import paper from "../images/paper.png";
+import scissors from "../images/scissors.png";
 
 
 const PlayerOne = () => {
@@ -13,7 +16,7 @@ const PlayerOne = () => {
   const startGame = () => {
     let playerA = { name: name, wins: 0 }
     setPlayer(playerA);
-    let cont = { name: "contestant", wins: 0 }
+    let cont = { name: "Contestant", wins: 0 }
     setContestant(cont);
   };
 
@@ -70,18 +73,21 @@ const PlayerOne = () => {
       <CenterDiv>
         {!player &&
           <Form onSubmit={startGame}>
-            <Form.Field>
-              <label>Please Enter Name</label>
-              <Form.Input fluid placeholder="Name .." value={name} onChange={(e) => setName(e.target.value)} />
-            </Form.Field>
-            <Button type="submit">Start Rock, Paper, Scissors!</Button>
+
+            <Button type="submit">Rock, Paper, Scissors .. GO!</Button>
           </Form>}
         {player && contestant &&
           <div>
-            {whoseWinner()}
+            {renderStatus()}
             {!weapon &&
               <>
                 <p>Pick Carefully</p>
+                <FlexDiv>
+                  <Image src={rock} size="small" circular onClick={() => chooseWeapon(1)} />
+                  <Image src={paper} size="small" circular onClick={() => chooseWeapon(2)} />
+                  <Image src={scissors} size="small" circular onClick={() => chooseWeapon(3)} />
+
+                </FlexDiv>
               </>}
             {weapon && contestantChoice &&
               <div>
